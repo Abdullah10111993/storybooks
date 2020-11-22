@@ -24,5 +24,17 @@ router.post('/', ensureAuth, async (req, res) => {
     }
 })
 
+// @desc Show All stories
+// @route GET /stories
+router.get('/', ensureAuth, async (req, res) => {
+    try {
+        const stories = await Story.find({ status: 'public'})
+            .populate('user').sort({ createdAt: 'desc' }).lean();
+        res.render('stories/index', { stories });
+    } catch (e) {
+        console.error(e);
+        res.render('error/500');
+    }
+})
 
 module.exports = router;
