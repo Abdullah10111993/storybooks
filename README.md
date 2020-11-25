@@ -4,7 +4,7 @@ This is an application where people can create public and private stories. It us
 
 ## How to Start
 
-Navigate to story-app and type the following in terminal / command window
+Navigate to story-app and type the following in terminal / command window. (Makesure to fillup the clientId and clientSecret in config.env)
 
 ```bash
 # Install dependencies
